@@ -21,20 +21,29 @@ var someOtherFunction = function(cb) {
   cb()
 }
 
-// Notice that in someOtherFunction, cb is actually a function that is passed in as a parameter
-// So, when we execute the following line of code, the function logNumber2 is passed to someOtherFunction
-// someOtherFunction first prints '1' and then executes "cb", which in this case refers to logNumber2
+// Notice that in someOtherFunction, cb is actually a function 
+// that is passed in as a parameter. So, when we execute the following 
+// line of code, the function logNumber2 is passed to someOtherFunction.
+// someOtherFunction first prints '1' and then executes "cb", which 
+// in this case refers to logNumber2.
 
 someOtherFunction(logNumber2) //prints '1' and then '2'
 
-// Anyway, below are a bunch of problems on callbacks. They're not actually that hard but I REALLY want you
-// to get a solid hold on callbacks before we continue moving faster.
+// Anyway, below are a bunch of problems on callbacks. They're not actually 
+// that hard but I REALLY want you to get a solid hold on callbacks before 
+// we continue moving onto other things.
+
+// I've included a bunch of console.log statements in this assignment for 
+// you to test your code. You don't need to run `npm test` for this assignment. 
+// Just keep running `node index.js` to see your updated output as you complete
+// the assignment!
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Problem 1                                                                   *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-//1. Write a forEach function that takes an array as the first parameter and calls function f (the second parameter) on each element in the array
+// 1. Write a forEach function that takes an array as the first parameter and calls 
+// function f (the second parameter) on each element in the array
 function forEach(arr, f) {
  // STUB
   for(let i = 0; i < arr.length; i++){
@@ -47,7 +56,7 @@ function forEach(arr, f) {
 var add1 = function(element) {
   console.log(element + 1)
 }
-forEach([1,2,3,4], add1) // should output 2,3,4,5
+forEach([1,2,3,4], add1) // should output 2 3 4 5
 
 // EXAMPLE 2 of using forEach
 var separateByComma = function(element){
@@ -59,7 +68,10 @@ forEach(["a,b",'c,d'], separateByComma) // should output [a,b] [c,d]
  * Problem 2                                                                   *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-//Complete the function inplaceMap. It should replace every item in the array arr with the return value of mapperF (a function). mapperF is a callback
+// Complete the function inplaceMap. 
+// It should replace every item in the array arr with 
+// the return value of mapperF (a function). 
+// Note: mapperF is a callback
 function inplaceMap(arr, mapperF){
   //STUB
   for (let i = 0; i < arr.length; i++) {
@@ -94,7 +106,8 @@ inplaceMap(numbers, add2)
  * Problem 3                                                                   *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-//Complete returnMap that does the same thing as the last one BUT it returns a new array except of modifying an existing one
+// Complete returnMap that does the same thing as the last one BUT 
+// it returns a new array except of modifying an existing one.
 
 function returnMap(arr, mapperF){
   //STUB
@@ -116,7 +129,10 @@ var replaceWithBrocolli = function(element) {
 }
 var foodArray = ['JAM','PAM','PEPPER','HAM','TOMATO', 'HAM']
 var mappedFoodArray = returnMap(foodArray, replaceWithBrocolli)
-// you can uncomment the following the following two log statements by removing the // infront of them
+// you can uncomment the following the following two log statements 
+// by removing the // infront of them so that you see what they
+// output when you run `node index.js`
+
 // console.log(foodArray) // should output ['JAM','PAM','PEPPER','HAM','TOMATO', 'HAM']
 // console.log(mappedFoodArray) // should output ['JAM','PAM','PEPPER','BROCOLLI','TOMATO', 'BROCOLLI']
 
@@ -135,10 +151,12 @@ var numbersMapped = returnMap(numbers, add2)
  * Problem 4                                                                   *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-// I've written a function getUser that gets a user. It then passes that user to a callback function that it must be provided.
-// Your job is to write a callback function that changes the user's lastname to "Smith". This one's a bit tricky...
+// I've written a function getUser that gets a user. It then passes that user 
+// to a callback function that it must be provided. Your job is to write a 
+// callback function that changes the user's lastname to "Smith". This one's a bit tricky...
 
-var yourCallback = undefined // you need to change this line of code. yourCallback needs to a function and not "undefined"
+// you need to change this line of code. yourCallback needs to a function and not "undefined"
+var yourCallback = undefined 
 
 //STUB
 var yourCallback = function(user) {
